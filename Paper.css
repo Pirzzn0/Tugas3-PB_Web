@@ -1,0 +1,35 @@
+.hr1{
+    color : rgb(12, 67, 1);
+    border : none;
+    height: 4px;
+    background-color:  rgb(12, 67, 1);
+}
+.hr2{
+    color   : rgb(4, 98, 5);
+    border : none;
+    height: 2px;
+    background-color: rgb(4, 98, 5);
+}
+table{
+    width : 100%;
+    border : none;
+    border-collapse: collapse;
+}
+.td1{
+    width : 40%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+.td2{
+    width : 35%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.td3{
+    width : 25%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: right;
+}
