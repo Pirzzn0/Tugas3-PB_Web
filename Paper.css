@@ -1,35 +1,180 @@
-.hr1{
-    color : rgb(12, 67, 1);
-    border : none;
-    height: 4px;
-    background-color:  rgb(12, 67, 1);
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-.hr2{
-    color   : rgb(4, 98, 5);
-    border : none;
-    height: 2px;
-    background-color: rgb(4, 98, 5);
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
 }
-table{
-    width : 100%;
-    border : none;
-    border-collapse: collapse;
+
+body {
+	line-height: 1;
 }
-.td1{
-    width : 40%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  text-align: left;
+
+ol,
+ul {
+	list-style: none;
 }
-.td2{
-    width : 35%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  text-align: center;
+
+blockquote,
+q {
+	quotes: none;
 }
-.td3{
-    width : 25%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  text-align: right;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.Laman {
+	width: 800px;
+	margin: auto;
+	background-color: #fff;
+}
+
+.header .judul {
+	padding: 10px;
+	font-size: 29px;
+}
+
+.header ul li {
+	display: inline-block;
+	margin-top: 5px;
+	margin-right: 0px;
+
+}
+
+.header a {
+	text-decoration: none;
+	padding: 20px 8px ;
+	
+}
+
+.gambar {
+	margin-top: 15px;
+	height: 300px;
+	width: auto;
+	background-image: url(Image/k2.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-top: 5px solid lightseagreen;
+	border-bottom: 5px solid blanchedalmond;
+	padding: 20px;
+}
+
+.isi {
+	padding: 20px;
+}
+
+.isi h2 {
+	font-size: 22px;
+	font-weight: 100;
+}
+
+.isi .info {
+	margin-top: 8px;
+	padding: 3px;
 }
