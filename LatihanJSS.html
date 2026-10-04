@@ -1,0 +1,28 @@
+<style>
+    body { 
+        font-family: Arial, sans-serif; 
+        background-color: #f0f2f5;
+        margin: 0;
+        
+        /* 1. Membuat tinggi halaman web menyesuaikan 100% tinggi layar layaknya kanvas */
+        min-height: 100vh; 
+        
+        /* 2. Mengaktifkan Flexbox untuk memusatkan posisi */
+        display: flex; 
+        flex-direction: column;
+        justify-content: center; /* Memposisikan ke tengah secara vertikal (atas-bawah) */
+        align-items: center;     /* Memposisikan ke tengah secara horizontal (kiri-kanan) */
+    }
+
+    #layarOutput { 
+        background-color: white; 
+        padding: 30px; 
+        border-radius: 10px; 
+        width: 400px; /* Membatasi lebar kotak agar tidak melebar sampai ujung layar */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Menambahkan efek bayangan elegan */
+    }
+    
+    h1, p {
+        text-align: center;
+    }
+</style>
