@@ -1,28 +1,47 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dom Selection</title>
+  <style>
+    * { 
+        border: 2px solid #dedede; 
+        padding: 15px; 
+        margin: 15px; 
+    }
+    html { 
+      margin: 0;
+      padding: 0;
+    }
     body { 
-        font-family: Arial, sans-serif; 
-        background-color: #f0f2f5;
-        margin: 0;
-        
-        /* 1. Membuat tinggi halaman web menyesuaikan 100% tinggi layar layaknya kanvas */
-        min-height: 100vh; 
-        
-        /* 2. Mengaktifkan Flexbox untuk memusatkan posisi */
-        display: flex; 
-        flex-direction: column;
-        justify-content: center; /* Memposisikan ke tengah secara vertikal (atas-bawah) */
-        align-items: center;     /* Memposisikan ke tengah secara horizontal (kiri-kanan) */
+      max-width: 600px;
+      margin: 30px auto;
+      font-family: sans-serif;
+      color: #333;
     }
+  </style>
+</head>
+<body>
 
-    #layarOutput { 
-        background-color: white; 
-        padding: 30px; 
-        border-radius: 10px; 
-        width: 400px; /* Membatasi lebar kotak agar tidak melebar sampai ujung layar */
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Menambahkan efek bayangan elegan */
-    }
-    
-    h1, p {
-        text-align: center;
-    }
-</style>
+  <h1 id="judul">Hello World</h1>
+  <div id="container">
+      <section id="a">
+          <p class="p1">paragraf 1</p>
+          <!-- Perbaikan link href di bawah ini -->
+          <a href="https://instagram.com/sandhikagalih">Instagram Sandhika Galih</a>
+          <p class="p2">paragraf 2</p>
+          <p class="p3">paragraf 3</p>
+      </section>
+      <section id="b">
+          <p>paragraf 4</p>
+          <ul>
+              <li>item 1</li>
+              <li>item 2</li>
+              <li>item 3</li>
+          </ul>
+      </section>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

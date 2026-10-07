@@ -1,0 +1,30 @@
+.judul {
+    font-size: 28px;
+    margin: 0.67em 0;
+    text-align: center;
+    
+}
+.p1{
+    font-size: 18px;
+    color: #c6c631;
+    background-color: #100e06;
+    text-align: center;
+}
+.p2{
+    font-size: 16px;
+    color: #1a1a19;
+    background-color: #e1e9ec;
+    text-align: center;
+}
+ .nama{
+    font-size: 17px;
+    color: #111105;
+    background-color: #258db2;
+    text-align: center;
+}
+.jumlah{
+    font-size: 17px;
+    color: #111105;
+    background-color: #258db2;
+    text-align: center;
+}
