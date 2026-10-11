@@ -3,54 +3,165 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="Web2.css">
-</head>
-<style>
-* { 
+  <title>SIA USD - Input & Ringkasan Data</title>
+  <style>
+    * { 
         border: 2px solid #121010; 
-        padding: 15px; 
-        margin: 15px; 
+        padding: 10px; 
+        margin: 10px; 
         background-color: #e1e9ec;
-    }
-    html { 
-      margin: 0;
-      padding: 0;
     }
     body { 
       max-width: 600px;
       margin: 30px auto;
-      font-family: sans-serif;
+      font-family: sans-serif; 
       color: #1a1a19;
     }
-</style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #121010;
+      padding: 8px;
+      text-align: left;
+    }
+    .card-hasil {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #ffffff;
+      border: 2px dashed #121010;
+    }
+  </style>
+</head>
 <body>
   <h1 class="judul">SIA USD</h1>
-  <div class = "paper">
-    <p  class="p1">Sistem Informasi Akademik Universitas Sanata Dharma</p>
+  
+  <!-- Form Utama Data Mahasiswa -->
+  <div class="Login">
+    <h2>Form Data Mahasiswa</h2>
+    <form id="mahasiswaForm">
+      <div class="nama">
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" placeholder="Masukkan nama Anda" required>
+      </div>
+      <div class="jumlah">
+        <label for="Jumlah">Jumlah Program</label>
+        <input type="number" id="Jumlah" placeholder="Masukkan Jumlah Program" min="1" required>
+      </div>
+      <div class="pilihan-kelamin" style="border:none; padding:0; margin:5px 0;"> 
+        <label for="pilihan">Pilih Jenis Kelamin:</label>
+        <select id="pilihan" name="pilihan">
+          <option value="Laki-laki">Laki-laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
+      </div>
+      <button type="submit" style="margin-top: 10px;">OK</button>
+    </form>
   </div>
-  <div class = "Login">
-  <h2>Form Data Mahasiswa</h2>
-  <form id="mahasiswaForm">
-    <div class="nama">
-      <label for="nama">Nama</label>
-      <input type="text" id="nama" placeholder="Masukkan nama Anda" required>
-    </div>
-    <div class="jumlah">
-      <label for="Jumlah">Jumlah</label>
-      <input type="number" id="Jumlah" placeholder="Masukkan Jumlah Program" required>
-    </div>
-    <button type="submit">OK</button>
-  </form>
-  </div>
-  <div class="pilihan"> 
-    <label  for="pilihan">Pilih Jenis Kelamin:</label>
-    <select id="pilihan" name="pilihan">
-      <option value="laki-laki">Laki-laki</option>
-      <option value="perempuan">Perempuan</option>
-  </div>
-    
-    
-    
+
+  <!-- Tempat di mana tabel input mata kuliah akan dimunculkan -->
+  <div id="tabelContainer"></div>
+
+  <!-- Tempat di mana seluruh hasil data akan ditampilkan di bagian bawah -->
+  <div id="hasilContainer"></div>
+
+  <script>
+    const form = document.getElementById('mahasiswaForm');
+    const tabelContainer = document.getElementById('tabelContainer');
+    const hasilContainer = document.getElementById('hasilContainer');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const namaMahasiswa = document.getElementById('nama').value;
+      const jumlahProgram = parseInt(document.getElementById('Jumlah').value);
+      const jenisKelamin = document.getElementById('pilihan').value;
+
+      tabelContainer.innerHTML = '';
+      hasilContainer.innerHTML = ''; 
+
+      if (jumlahProgram > 0) {
+        let htmlTabel = `
+          <div id="wrapperMataKuliah">
+            <h3>Pilihan Mata Kuliah untuk: ${namaMahasiswa}</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Nama Mata Kuliah</th>
+                  <th>Kode Kelas</th>
+                </tr>
+              </thead>
+              <tbody>
+        `;
+
+        for (let i = 1; i <= jumlahProgram; i++) {
+          htmlTabel += `
+            <tr>
+              <td>${i}</td>
+              <td><input type="text" class="input-mk" placeholder="Mata Kuliah ${i}" style="width: 90%;"></td>
+              <td><input type="text" class="input-kode" placeholder="Kode Kelas" style="width: 90%;"></td>
+            </tr>
+          `;
+        }
+
+        htmlTabel += `
+              </tbody>
+            </table>
+            <!-- ID tombol disamakan agar terdeteksi oleh JavaScript -->
+            <button type="button" id="btnSimpan" style="margin-top: 15px;">Simpan Pilihan</button>
+          </div>
+        `;
+
+        tabelContainer.innerHTML = htmlTabel;
+
+        // Menambahkan event listener ke tombol "Simpan Pilihan" yang baru dibuat
+        document.getElementById('btnSimpan').addEventListener('click', function() {
+          const inputMk = document.querySelectorAll('.input-mk');
+          const inputKode = document.querySelectorAll('.input-kode');
+
+          let daftarMatkulHTML = '';
+          for (let i = 0; i < inputMk.length; i++) {
+            let namaMatkul = inputMk[i].value ? inputMk[i].value : '(Belum diisi)';
+            let kodeKelas = inputKode[i].value ? inputKode[i].value : '(Belum diisi)';
+
+            daftarMatkulHTML += `
+              <tr>
+                <td>${i + 1}</td>
+                <td>${namaMatkul}</td>
+                <td>${kodeKelas}</td>
+              </tr>
+            `;
+          }
+
+          // Menampilkan hasil ringkasan lengkap di bagian bawah halaman
+          hasilContainer.innerHTML = `
+            <div class="card-hasil">
+              <h2>Hasil Ringkasan Data Mahasiswa</h2>
+              <p><strong>Nama:</strong> ${namaMahasiswa}</p>
+              <p><strong>Jenis Kelamin:</strong> ${jenisKelamin}</p>
+              <p><strong>Jumlah Program:</strong> ${jumlahProgram}</p>
+              
+              <h3>Daftar Mata Kuliah Pilihan:</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Nama Mata Kuliah</th>
+                    <th>Kode Kelas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${daftarMatkulHTML}
+                </tbody>
+              </table>
+            </div>
+          `;
+        });
+      }
+    });
+  </script>
 </body>
 </html>
