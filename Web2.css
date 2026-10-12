@@ -1,45 +1,45 @@
 body {
-        font-family: Tahoma, Geneva, Verdana, sans-serif;
-        margin: 28px;
-        line-height: 1.8;
-      }
-      .header {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        border: 2px solid #0b0000;
-        padding: 15px;
-        margin-bottom: 20px;
-        background: #f9f9f9;
-      }
-      .header img {
-        width: 150px;
-        height: 150px;
-        border-radius: 37%;
-        object-fit: cover;
-        border: 5px solid #655c5c;
-      }
-      .step {
-        margin-bottom: 15px;
-        border-left: 4px solid #007bff;
-        padding: 10px 15px;
-        display: none;
-        background: #eef5ff;
-      }
-      .step.aktif {
-        display: block;
-      } 
-      .hasil {
-        background: #d4edda;
-        padding: 19px;
-        border: 1px solid #c3e6cb;
-        margin-top: 23px;
-        display: none;
-      }
-      button {
-        background: #4392e8;
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        cursor: pointer;
-      }
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  line-height: 1.6;
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 2px solid #000;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: #f9f9f9;
+}
+.header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #333;
+}
+.step {
+  margin-bottom: 15px;
+  border-left: 4px solid #007bff;
+  padding: 10px 15px;
+  display: none;
+  background: #eef5ff;
+}
+.step.aktif {
+  display: block;
+} /* Muncul jika diberi class "aktif" */
+.hasil {
+  background: #d4edda;
+  padding: 15px;
+  border: 1px solid #c3e6cb;
+  margin-top: 20px;
+  display: none;
+}
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+}
