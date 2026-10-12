@@ -1,56 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="Web2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4 JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .header { display: flex; align-items: center; gap: 20px; border: 2px solid #000; padding: 15px; margin-bottom: 20px; background: #f9f9f9;}
+        .header img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 2px solid #333; }
+        .step { margin-bottom: 15px; border-left: 4px solid #007bff; padding: 10px 15px; display: none; background: #eef5ff; }
+        .step.aktif { display: block; } /* Muncul jika diberi class "aktif" */
+        .hasil { background: #d4edda; padding: 15px; border: 1px solid #c3e6cb; margin-top: 20px; display: none; }
+        button { background: #007bff; color: white; border: none; padding: 5px 15px; cursor: pointer; }
+    </style>
 </head>
-<style>
-* { 
-        border: 2px solid #121010; 
-        padding: 15px; 
-        margin: 15px; 
-        background-color: #e1e9ec;
-    }
-    html { 
-      margin: 0;
-      padding: 0;
-    }
-    body { 
-      max-width: 600px;
-      margin: 30px auto;
-      font-family: sans-serif;
-      color: #1a1a19;
-    }
-</style>
 <body>
-  <h1 class="judul">SIA USD</h1>
-  <div class = "paper">
-    <p  class="p1">Sistem Informasi Akademik Universitas Sanata Dharma</p>
-  </div>
-  <div class = "Login">
-  <h2>Form Data Mahasiswa</h2>
-  <form id="mahasiswaForm">
-    <div class="nama">
-      <label for="nama">Nama</label>
-      <input type="text" id="nama" placeholder="Masukkan nama Anda" required>
+    <div class="header">
+        <img id="fotoProfil" src="https://via.placeholder.com/100" alt="Foto Profil">
+        <div>
+            <h3 style="margin: 0;">Nama: Tirta  Wahyu Aji Suteja</h3>
+            <h4 style="margin: 0;">NIM: 12345678</h4>
+            <br>
+            <label style="font-size: 0.9em; font-weight:bold;">Pilih Profil:</label><br>
+            <input type="file" id="inputFoto" accept="image/*" onchange="gantiFoto(event)">
+        </div>
     </div>
-    <div class="jumlah">
-      <label for="Jumlah">Jumlah</label>
-      <input type="number" id="Jumlah" placeholder="Masukkan Jumlah Program" required>
+    <div class="step aktif" id="step1">
+        Nama: <input type="text" id="nama"><br><br>
+        Jumlah Pilihan: <input type="number" id="jumlah" min="1"><br><br>
+        <button onclick="lanjutStep2()">OK</button>
     </div>
-    <button type="submit">OK</button>
-  </form>
-  </div>
-  <div class="pilihan"> 
-    <label  for="pilihan">Pilih Jenis Kelamin:</label>
-    <select id="pilihan" name="pilihan">
-      <option value="laki-laki">Laki-laki</option>
-      <option value="perempuan">Perempuan</option>
-  </div>
-    
-    
-    
+    <div class="step" id="step2">
+        <div id="tempatPilihan"></div>
+        <button onclick="lanjutStep3()">OK</button>
+    </div>
+    <div class="step" id="step3">
+        Pilihan: <select id="dropdown"></select><br><br>
+        <button onclick="lanjutStep4()">OK</button>
+    </div>
+    <div class="step" id="step4">
+        Email: <input type="email" id="email" placeholder="contoh@mail.com"><br><br>
+        <button onclick="tampilkanHasil()">OK</button>
+    </div>
+    <div class="hasil" id="hasilAkhir"></div>
+    <script src="Web2.js"></script>
 </body>
 </html>
